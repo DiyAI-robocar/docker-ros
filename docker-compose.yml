@@ -1,0 +1,14 @@
+version: '2'
+services:
+  master:
+    build: ./master/.
+    container_name: master
+
+  playground:
+    build: ./playground/.
+    container_name: playground
+    ports:
+      - 2222:2222
+    environment:
+       - "ROS_HOSTNAME=talker"
+       - "ROS_MASTER_URI=http://master:11311"
