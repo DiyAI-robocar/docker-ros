@@ -3,7 +3,9 @@ FROM ros:melodic-robot
 RUN apt-get update && apt-get install -y \
     ros-melodic-ros-tutorials \
     ros-melodic-common-tutorials \
-    tmux screen vim wget curl iputils-ping mtr tcpdump openssh-server mc
+    tmux screen vim wget curl iputils-ping mtr tcpdump openssh-server mc gedit \
+    codelite x11-apps
+
 #RUN TERM=linux wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && ~/.bash_it/install.sh
 RUN sed s/bobby/candy/g -i /root/.bashrc
