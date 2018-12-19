@@ -13,7 +13,7 @@ RUN echo >>/root/.bashrc export ROS_MASTER_URI=http://master:11311
 RUN echo >>/root/.bashrc source /ros_entrypoint.sh
 RUN echo >>/root/.bashrc set +e
 RUN mkdir /root/.ssh
+RUN mkdir /run/sshd
 ADD authorized_keys /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
-RUN mkdir /run/sshd
 CMD /usr/sbin/sshd -D -p 2222
