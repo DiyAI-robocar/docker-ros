@@ -14,6 +14,7 @@ RUN echo >>/root/.bashrc source /ros_entrypoint.sh
 RUN echo >>/root/.bashrc set +e
 RUN mkdir /root/.ssh
 RUN mkdir /run/sshd
+RUN sed -i 's/#X11UseLocalhost yes/X11UseLocalhost no/' /etc/ssh/sshd_config
 ADD authorized_keys /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 CMD /usr/sbin/sshd -D -p 2222
