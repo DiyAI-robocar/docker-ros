@@ -3,7 +3,7 @@ FROM ros:melodic-robot
 RUN apt-get update && apt-get install -y \
     ros-melodic-ros-tutorials \
     ros-melodic-common-tutorials \
-    ros-melodic-rqt ros-melodic-rqt-robot-plugins \
+    ros-melodic-rqt ros-melodic-rqt-robot-plugins ros-melodic-rqt-common-plugins \
     tmux screen vim wget curl iputils-ping mtr tcpdump openssh-server mc gedit \
     codelite x11-apps python3-pip
 
