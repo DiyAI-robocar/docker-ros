@@ -9,6 +9,10 @@ services:
     container_name: playground
     ports:
       - 2222:2222
+    volumes:
+      - /home:/home
+      - /usr/local:/usr/local
     environment:
-       - "ROS_HOSTNAME=talker"
+       - "ROS_HOSTNAME=playground"
        - "ROS_MASTER_URI=http://master:11311"
+       - "ROS_DISTRO=melodic"
