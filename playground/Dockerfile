@@ -25,6 +25,6 @@ ADD authorized_keys /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 RUN useradd -u 1000 -g 100 -M -N -d /home/af1n -s /usr/bin/zsh af1n
 
-RUN apt-get install -y ros-melodic-ackermann-msgs ros-sensor-msgs
+RUN apt-get install -y ros-melodic-ackermann-msgs ros-sensor-msgs python3-rospkg-modules
 
 CMD /usr/sbin/sshd -D -p 2222
